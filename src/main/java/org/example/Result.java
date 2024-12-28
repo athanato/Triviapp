@@ -10,8 +10,8 @@ public class Result {
     private String difficulty;
     private String category;
     private String question;
-    private String correctAnswer;
-    private List<String> incorrectAnswers;
+    private String correct_answer;
+    private List<String> incorrect_answers;
 
     /**
      * No args constructor for use in serialization
@@ -26,8 +26,8 @@ public class Result {
         this.difficulty = difficulty;
         this.category = category;
         this.question = question;
-        this.correctAnswer = correctAnswer;
-        this.incorrectAnswers = incorrectAnswers;
+        this.correct_answer = correct_answer;
+        this.incorrect_answers = incorrect_answers;
     }
 
     public String getType() {
@@ -62,20 +62,20 @@ public class Result {
         this.question = question;
     }
 
-    public String getCorrectAnswer() {
-        return correctAnswer;
+    public String getCorrect_answer() {
+        return correct_answer;
     }
 
-    public void setCorrectAnswer(String correctAnswer) {
-        this.correctAnswer = correctAnswer;
+    public void setCorrect_answer(String correct_answer) {
+        this.correct_answer = correct_answer;
     }
 
-    public List<String> getIncorrectAnswers() {
-        return incorrectAnswers;
+    public List<String> getIncorrect_answers() {
+        return incorrect_answers;
     }
 
-    public void setIncorrectAnswers(List<String> incorrectAnswers) {
-        this.incorrectAnswers = incorrectAnswers;
+    public void setIncorrect_answers(List<String> incorrect_answers) {
+        this.incorrect_answers = incorrect_answers;
     }
 
     @Override
@@ -100,11 +100,11 @@ public class Result {
         sb.append(',');
         sb.append("correctAnswer");
         sb.append('=');
-        sb.append(((this.correctAnswer == null)?"<null>":this.correctAnswer));
+        sb.append(((this.correct_answer == null)?"<null>":this.correct_answer));
         sb.append(',');
         sb.append("incorrectAnswers");
         sb.append('=');
-        sb.append(((this.incorrectAnswers == null)?"<null>":this.incorrectAnswers));
+        sb.append(((this.incorrect_answers == null)?"<null>":this.incorrect_answers));
         sb.append(',');
         if (sb.charAt((sb.length()- 1)) == ',') {
             sb.setCharAt((sb.length()- 1), ']');
