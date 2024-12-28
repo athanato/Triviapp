@@ -1,3 +1,4 @@
+
 package org.example;
 
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -17,7 +18,7 @@ public class DemoGetRESTAPI {
     public static void demoGetRESTAPI() {
         CloseableHttpClient httpClient = HttpClients.createDefault();
         try {
-            HttpGet getRequest = new HttpGet("https://opentdb.com/api.php?amount=10&category=20&difficulty=medium&type=multiple");
+            HttpGet getRequest = new HttpGet("https://opentdb.com/api.php?amount=10");
             getRequest.addHeader("accept", "application/json");
             HttpResponse response = httpClient.execute(getRequest);
             Result c = null;
