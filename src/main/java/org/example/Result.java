@@ -20,7 +20,7 @@ public class Result {
     public Result() {
     }
 
-    public Result(String type, String difficulty, String category, String question, String correctAnswer, List<String> incorrectAnswers) {
+    public Result(String type, String difficulty, String category, String question, String correct_answer, List<String> incorrect_answers) {
         super();
         this.type = type;
         this.difficulty = difficulty;
@@ -98,11 +98,11 @@ public class Result {
         sb.append('=');
         sb.append(((this.question == null)?"<null>":this.question));
         sb.append(',');
-        sb.append("correctAnswer");
+        sb.append("correct_answer");
         sb.append('=');
         sb.append(((this.correct_answer == null)?"<null>":this.correct_answer));
         sb.append(',');
-        sb.append("incorrectAnswers");
+        sb.append("incorrect_answers");
         sb.append('=');
         sb.append(((this.incorrect_answers == null)?"<null>":this.incorrect_answers));
         sb.append(',');
