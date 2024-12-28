@@ -21,10 +21,10 @@ public class DemoGetRESTAPI {
             HttpGet getRequest = new HttpGet("https://opentdb.com/api.php?amount=10");
             getRequest.addHeader("accept", "application/json");
             HttpResponse response = httpClient.execute(getRequest);
-            Result c = null;
+            Example c = null;
             ObjectMapper mapper = new ObjectMapper();
             mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-            c = mapper.readValue(response.getEntity().getContent(), Result.class);
+            c = mapper.readValue(response.getEntity().getContent(), Example.class);
             System.out.println(c.toString());
         } catch (JsonMappingException e) {
             System.out.println("JsonMappingException ERROR");
