@@ -13,13 +13,13 @@ import org.example.Result;
 
 import java.io.IOException;
 import java.util.Scanner;
-
+//αποστολή αιτήματος GET σε REST API
 public class DemoGetRESTAPI {
-
+    //Μέθοδος εκτέλεσης αιτήματος GET
     public static void demoGetRESTAPI() {
         Scanner scanner = new Scanner(System.in);
 
-        // 1. Ζήτα από τον χρήστη να εισάγει τα κριτήρια
+        // Εισαγωγή παραμέτρων από τον χρήστη
         System.out.println("Enter the number of questions (amount): ");
         int amount = scanner.nextInt();
 
@@ -33,7 +33,7 @@ public class DemoGetRESTAPI {
         System.out.println("Enter type (multiple, boolean or leave empty): ");
         String type = scanner.nextLine();
 
-        // 2. Δημιουργία του URL με βάση τα κριτήρια
+        // Δημιουργία URL βάσει παραμέτρων
         StringBuilder urlBuilder = new StringBuilder("https://opentdb.com/api.php?");
         urlBuilder.append("amount=").append(amount);
 
@@ -49,23 +49,31 @@ public class DemoGetRESTAPI {
 
         String url = urlBuilder.toString();
         System.out.println("Generated URL: " + url);
+        // Δημιουργία HTTP client
         CloseableHttpClient httpClient = HttpClients.createDefault();
         try {
+            // Δημιουργία αιτήματος GET
             HttpGet getRequest = new HttpGet(url);
             getRequest.addHeader("accept", "application/json");
+            // Εκτέλεση αιτήματος
             HttpResponse response = httpClient.execute(getRequest);
             Example c = null;
+            // Ανάλυση απόκρισης JSON
             ObjectMapper mapper = new ObjectMapper();
             mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
             c = mapper.readValue(response.getEntity().getContent(), Example.class);
+            // Εμφάνιση αποτελέσματος
             System.out.println(c.toString());
         } catch (JsonMappingException e) {
+            // Σφάλμα αντιστοίχισης JSON
             System.out.println("JsonMappingException ERROR");
             e.printStackTrace();
         } catch (ClientProtocolException e) {
+            // Σφάλμα πρωτοκόλλου
             System.out.println("ClientProtocolException ERROR");
             e.printStackTrace();
         } catch (IOException e) {
+            // Σφάλμα εισόδου/εξόδου
             System.out.println("IOException ERROR");
             e.printStackTrace();
         }

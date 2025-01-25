@@ -4,8 +4,9 @@ import java.util.List;
 //import javax.annotation.Generated;
 
 //@Generated("jsonschema2pojo")
+// Δημιουργία κλάσης Result
 public class Result {
-
+    // Στοιχεία για μια ερώτηση
     private String type;
     private String difficulty;
     private String category;
@@ -14,12 +15,11 @@ public class Result {
     private List<String> incorrect_answers;
 
     /**
-     * No args constructor for use in serialization
-     *
+     * Κατασκευαστής χωρίς παραμέτρους για χρήση στη διαδικασία αποσειροποίησης.
      */
     public Result() {
     }
-
+    // Κατασκευαστής με παραμέτρους για αρχικοποίηση της κλάσης
     public Result(String type, String difficulty, String category, String question, String correct_answer, List<String> incorrect_answers) {
         super();
         this.type = type;
@@ -29,7 +29,7 @@ public class Result {
         this.correct_answer = correct_answer;
         this.incorrect_answers = incorrect_answers;
     }
-
+    // Getters και Setters για τα πεδία της κλάσης
     public String getType() {
         return type;
     }
@@ -77,7 +77,7 @@ public class Result {
     public void setIncorrect_answers(List<String> incorrect_answers) {
         this.incorrect_answers = incorrect_answers;
     }
-
+    // Αναθεώρηση της μεθόδου toString για καλύτερη εμφάνιση της κλάσης
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

@@ -2,60 +2,75 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- Καθορίζει την έκδοση του POM -->
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
+    <!-- Ονομασία του artifact (π.χ. JAR) -->
     <artifactId>Triviapp</artifactId>
+    <!-- Έκδοση του project -->
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+        <!-- Καθορίζει την έκδοση της Java για την κατασκευή του project -->
         <maven.compiler.source>23</maven.compiler.source>
         <maven.compiler.target>23</maven.compiler.target>
+        <!-- Καθορίζει την κωδικοποίηση που θα χρησιμοποιείται για το project -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 
     </properties>
+    <!-- Dependencies του project -->
     <dependencies>
-    <dependency>
-        <groupId>org.hibernate</groupId>
-        <artifactId>hibernate-core</artifactId>
-        <version>6.6.3.Final</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/junit/junit -->
-    <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>4.13.2</version>
-        <scope>test</scope>
-    </dependency>
         <dependency>
+            <!-- Hibernate Core (για αντικειμενο-σχεσιακή χαρτογράφηση) -->
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>6.6.3.Final</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/junit/junit -->
+        <!-- JUnit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <!-- HttpClient για την αποστολή HTTP αιτημάτων -->
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.5.14</version>
         </dependency>
         <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-core</artifactId>
-                <version>2.17.1</version>
+            <!-- Jackson Core για την επεξεργασία JSON δεδομένων -->
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.17.1</version>
         </dependency>
         <dependency>
+            <!-- Jackson Databind για την μετατροπή αντικειμένων σε JSON και αντίστροφα -->
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.17.1</version>
         </dependency>
         <dependency>
+            <!-- JUnit Jupiter για δοκιμές με την τελευταία έκδοση του JUnit -->
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>RELEASE</version>
+            <!-- Scope test, για χρήση μόνο στις δοκιμές -->
             <scope>test</scope>
         </dependency>
     </dependencies>
     <build>
         <plugins>
+            <!-- Ρυθμίσεις για το Maven Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
+                    <!-- Ρυθμίσεις για τις εκδόσεις της Java -->
                     <source>23</source>
                     <target>23</target>
                     <compilerArgs>--enable-preview</compilerArgs>
