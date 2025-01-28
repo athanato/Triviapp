@@ -3,6 +3,7 @@ package org.example;
 import java.util.List;
 //import javax.annotation.Generated;
 
+
 //@Generated("jsonschema2pojo")
 public class Example {
 
@@ -57,5 +58,7 @@ public class Example {
         }
         return sb.toString();
     }
+
+
 
 }

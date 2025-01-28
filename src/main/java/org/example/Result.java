@@ -3,6 +3,7 @@ package org.example;
 import java.util.List;
 //import javax.annotation.Generated;
 
+
 //@Generated("jsonschema2pojo")
 public class Result {
 
@@ -78,40 +79,41 @@ public class Result {
         this.incorrect_answers = incorrect_answers;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(Result.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
-        sb.append("type");
-        sb.append('=');
-        sb.append(((this.type == null)?"<null>":this.type));
-        sb.append(',');
-        sb.append("difficulty");
-        sb.append('=');
-        sb.append(((this.difficulty == null)?"<null>":this.difficulty));
-        sb.append(',');
-        sb.append("category");
-        sb.append('=');
-        sb.append(((this.category == null)?"<null>":this.category));
-        sb.append(',');
-        sb.append("question");
-        sb.append('=');
-        sb.append(((this.question == null)?"<null>":this.question));
-        sb.append(',');
-        sb.append("correct_answer");
-        sb.append('=');
-        sb.append(((this.correct_answer == null)?"<null>":this.correct_answer));
-        sb.append(',');
-        sb.append("incorrect_answers");
-        sb.append('=');
-        sb.append(((this.incorrect_answers == null)?"<null>":this.incorrect_answers));
-        sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
-        } else {
-            sb.append(']');
-        }
-        return sb.toString();
-    }
+//    @Override
+//    public String toString() {
+//        StringBuilder sb = new StringBuilder();
+//        sb.append(Result.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+//        sb.append("type");
+//        sb.append('=');
+//        sb.append(((this.type == null)?"<null>":this.type));
+//        sb.append(',');
+//        sb.append("difficulty");
+//        sb.append('=');
+//        sb.append(((this.difficulty == null)?"<null>":this.difficulty));
+//        sb.append(',');
+//        sb.append("category");
+//        sb.append('=');
+//        sb.append(((this.category == null)?"<null>":this.category));
+//        sb.append(',');
+//        sb.append("question");
+//        sb.append('=');
+//        sb.append(((this.question == null)?"<null>":this.question));
+//        sb.append(',');
+//        sb.append("correct_answer");
+//        sb.append('=');
+//        sb.append(((this.correct_answer == null)?"<null>":this.correct_answer));
+//        sb.append(',');
+//        sb.append("incorrect_answers");
+//        sb.append('=');
+//        sb.append(((this.incorrect_answers == null)?"<null>":this.incorrect_answers));
+//        sb.append(',');
+//        if (sb.charAt((sb.length()- 1)) == ',') {
+//            sb.setCharAt((sb.length()- 1), ']');
+//        } else {
+//            sb.append(']');
+//        }
+//        return sb.toString();
+//    }
+
 
 }

@@ -71,5 +71,9 @@ public class DemoGetRESTAPI {
         }
     }
 
+    public static void main(String[] args) {
+        demoGetRESTAPI();
+    }
+
 }
 
